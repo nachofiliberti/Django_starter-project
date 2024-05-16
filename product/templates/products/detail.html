@@ -1,0 +1,18 @@
+{% extends "index/base.html" %}
+{% block content %}
+<div class="container mt-3">
+    <h2>Detalles del Producto</h2>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">{{ product.description }}</p>
+            <p class="card-text"><strong>Precio:</strong> {{ product.price }}</p>
+            <p class="card-text"><strong>Categoría:</strong> {{ product.category.name }}</p>
+            <p class="card-text"><strong>Stock:</strong> {{ product.stock }}</p>
+            <a href="{% url 'product_update' product.id %}" class="btn btn-primary">Editar</a>
+            <a href="{% url 'product_delete' product.id%}"class="btn btn-danger" >Borrar</a>
+            <a href="{% url 'product_list' %}" class="btn btn-secondary">Volver a la lista</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
