@@ -1,0 +1,25 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+<div class="container mt-3">
+    <h2>Detalles del Proveedor</h2>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Nombre:</th>
+                <td>{{ supplier.name }}</td>
+            </tr>
+            <tr>
+                <th>Dirección:</th>
+                <td>{{ supplier.address }}</td>
+            </tr>
+            <tr>
+                <th>Teléfono:</th>
+                <td>{{ supplier.phone }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="{% url 'supplier_update' supplier.id %}" class="btn btn-primary">Actualizar</a>
+    <a href="{% url 'supplier_list' %}" class="btn btn-secondary">Volver a la lista</a>
+</div>
+{% endblock %}  

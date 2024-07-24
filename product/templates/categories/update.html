@@ -1,15 +1,13 @@
-{% extends "index/base.html" %}
+{% extends "home/base.html" %}
+
 {% block content %}
 <div class="container mt-3">
-    <h2>Actualizar Categoria</h2>
-    <h3>Nombre Actual: {{category.name}}</h3>
+    <h2>Actualizar Categoría</h2>
     <form method="post">
         {% csrf_token %}
-        <div class="form-group">
-            <label>Nombre</label>
-            <input type="text" name="name" class="form-control" value="{{category.name}}" required>
-        </div>
+        {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Actualizar</button>
     </form>
+    <a href="{% url 'category_list' %}" class="btn btn-secondary mt-3">Volver a la lista</a>
 </div>
 {% endblock %}

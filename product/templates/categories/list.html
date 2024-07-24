@@ -1,4 +1,4 @@
-{% extends "index/base.html" %}
+{% extends "home/base.html" %}
 {% block content %}
 <div class="container mt-3">
     <h2>Lista de Categorias</h2>
@@ -16,8 +16,10 @@
                 <td>{{ category.name }}</td>
                 <td class="text-end">
                     <a href="{% url 'category_detail' category.id %}"  class="btn btn-info btn-sm">Detalles</a>
+                    {% if user.is_authenticated %}
                     <a href="{% url 'category_update' category.id %}" class="btn btn-success btn-sm">Editar</a>
                     <a href="{% url 'category_delete' category.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                    {% endif %}
                 </td>
             </tr>
             {% endfor %}

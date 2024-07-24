@@ -1,0 +1,24 @@
+{% extends "home/base.html" %}
+{% load static %}
+
+{% block content %}
+    {% for image in images %}
+        <div class="container mt-5">
+            <div class="card">
+                <div class="card-header">
+                    {{ image.product }}
+                </div>
+                <div class="card-body text-center">
+                    <img src="{{ image.image.url }}" alt="image" class="img-fluid">
+                </div>
+                <div class="card-footer">
+                    {{ image.description }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'product/js/hola_mundo.js' %}"></script>
+{% endblock %}

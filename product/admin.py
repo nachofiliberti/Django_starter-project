@@ -4,6 +4,7 @@ from django.utils.html import format_html
 from product.models import (
     Category,
     Product,
+    ProductImage,
 )
 
 @admin.register(Product)
@@ -63,3 +64,7 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'name',
     )
+
+@admin.register(ProductImage)
+class ProductImageAdmin(admin.ModelAdmin):
+    list_display = ['product', 'image', 'description']
